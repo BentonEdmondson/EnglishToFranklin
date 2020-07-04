@@ -1,7 +1,7 @@
-var arpabetToFranklin = require('./ARPABETToFranklin.json');
+var arpabetToFranklin = require('./ARPABETToFranklin');
 var englishToArpabet = require('./EnglishToARPABET.json');
 
-var word = 'command';
+var word = 'astronomical';
 console.log(`Word: ${word}`);
 
 // TODO: update nodejs and add the '?'   vvv here
@@ -12,8 +12,8 @@ var franklinLettersOfWord = arpabetOfWord.map((arpabetSound, i) => {
     var franklinLetter = undefined;
     if (isLastItemOfArray(i, arpabetOfWord.length)) {
         franklinLetter = arpabetToFranklin[`word ends with ${arpabetSound}`];
-        console.log(`Franklin letter as last letter of string: ${`word ends with ${arpabetSound}`}`);
-        console.log(`Result: ${franklinLetter}\n\n`);
+        //console.log(`Franklin letter as last letter of string: ${`word ends with ${arpabetSound}`}`);
+        //console.log(`Result: ${franklinLetter}\n\n`);
     }
 
     if (!franklinLetter) {
