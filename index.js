@@ -1,45 +1,48 @@
 var arpabetToFranklin = require('./ARPABETToFranklin');
 var englishToArpabet = require('./EnglishToARPABET.json');
 
-var word = 'astronomical';
+var word = 'agriculturalist';
 console.log(`Word: ${word}`);
 
-// TODO: update nodejs and add the '?'   vvv here
-var arpabetOfWord = englishToArpabet[word].split(' ');
-console.log(`Arpabet: ${arpabetOfWord}`);
 
-var franklinLettersOfWord = arpabetOfWord.map((arpabetSound, i) => {
+var arpabetVersionOfWord = englishToArpabet[word]?.split(' ');
+if (arpabetVersionOfWord === undefined)
+    throw new Error(`${word} is not in the CMU dictionary.`);
+
+console.log(`Arpabet: ${arpabetVersionOfWord}`);
+
+var franklinVersionOfWord = arpabetVersionOfWord.map((arpabetSound, i) => {
     var franklinLetter = undefined;
-    if (isLastItemOfArray(i, arpabetOfWord.length)) {
-        franklinLetter = arpabetToFranklin[`word ends with ${arpabetSound}`];
-        //console.log(`Franklin letter as last letter of string: ${`word ends with ${arpabetSound}`}`);
-        //console.log(`Result: ${franklinLetter}\n\n`);
+    if (isLastItemOfArray(i, arpabetVersionOfWord.length) && arpabetSound === 'S') {
+        franklinLetter = 's'
     }
 
-    if (!franklinLetter) {
+    if (removeStressFromArpabetSound(arpabetSound) === 'EH' && arpabetVersionOfWord[i + 1] === 'R') {
+        franklinLetter = 'eer';
+        arpabetVersionOfWord[i + 1] = '';
+    }
+
+    if (franklinLetter === undefined) {
         franklinLetter = arpabetToFranklin[arpabetSound];
-        //console.log(`Normal arpabet sound: ${arpabetSound}`);
-        //console.log(`Result: ${franklinLetter}\n\n`);
-
     }
 
-    if (!franklinLetter) {
-        franklinLetter = arpabetToFranklin[removeLastCharFromString(arpabetSound)];
-        //console.log(`Arpabet sound without last letter: ${removeLastCharFromString(arpabetSound)}`);
-        //console.log(`Result: ${franklinLetter}\n\n`);
-
+    if (franklinLetter === undefined) {
+        franklinLetter = arpabetToFranklin[removeStressFromArpabetSound(arpabetSound)];
     }
+
+    if (franklinLetter === undefined)
+        throw new Error(`Couldn't find a Franklin letter for ${arpabetSound}`);
 
     return franklinLetter
-});
+}).join('');
 
-console.log(`Franklin word: ${franklinLettersOfWord.join('')}`);
+console.log(`Franklin word: ${franklinVersionOfWord}`);
 
-// I don't know why this needs to be like this but the following function doesn't
+// I don't know why I can't use arrow notation for these, but alas
 function isLastItemOfArray(index, arrayLength) {
     return index + 1 === arrayLength;
 }
 
-function removeLastCharFromString(string) {
+function removeStressFromArpabetSound(string) {
     return string.slice(0, -1);
 }
