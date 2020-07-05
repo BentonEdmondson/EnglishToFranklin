@@ -12,7 +12,7 @@ module.exports = {
     "AA": "ɋ",
 
     // æ - b{a}t
-    "AE": "α",
+    "AE": "ɑ",
 
     // ɛ - b{e}t
     "EH": "e",

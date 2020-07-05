@@ -1,7 +1,7 @@
 var arpabetToFranklin = require('./ARPABETToFranklin');
 var englishToArpabet = require('./EnglishToARPABET');
 
-var sentence = `The trees obfuscate the beautiful lake.`;
+var sentence = `The dog is black and white, but he is not a puppy...`;
 
 var sentenceWordsAndPunctuation = sentence.match(/[\w']+|[^\w']+/g);
 
@@ -29,7 +29,7 @@ console.log(`Original sentence: ${sentence}`)
 console.log(`Franklin sentence: ${franklinVersionOfSentence}`);
 
 function isAWord(string) {
-    return /^[\w'ʃαƒ]+$/.test(string);
+    return /^[\w']+$/.test(string);
 }
 
 function wordIsCapitalized(word) {
@@ -44,7 +44,7 @@ function capitalizeFranklinWord(franklinWord) {
         case 'ʃ':
             newFirstLetterOfFranklinWord = 'S';
             break;
-        case 'α':
+        case 'ɑ':
             newFirstLetterOfFranklinWord = 'A';
             break;
         case 'ƒ':
