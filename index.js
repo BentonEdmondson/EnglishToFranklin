@@ -1,17 +1,25 @@
 var arpabetToFranklin = require('./ARPABETToFranklin');
 var englishToArpabet = require('./EnglishToARPABET.json');
 
-var sentence = `I want to be a juror on a rural brewery robbery case.`;
+var sentence = `The Obamanomics are fascinating.`;
 
 var sentenceWordsAndPunctuation = sentence.match(/\w+|[^\w]+/g);
 
-var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(string => {
+var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(word => {
+    if (!isAWord(word))
+        return word;
+
     try {
-        return convertEnglishWordToFranklinWord(string.toLowerCase());
+        var franklinWord = convertEnglishWordToFranklinWord(word.toLowerCase());
+
+        if (wordIsCapitalized(word))
+            return capitalizeFranklinWord(franklinWord);
+
+        return franklinWord;
     }
     catch (error) {
-        if (error.message === `'${string}' is not in the CMU dictionary.`)
-            return string;
+        if (error.message === `'${word.toLowerCase()}' is not in the CMU dictionary.`)
+            return word;
         else
             throw error;
     }
@@ -19,6 +27,33 @@ var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(string => {
 
 console.log(`Original sentence: ${sentence}`)
 console.log(`Franklin sentence: ${franklinVersionOfSentence}`);
+
+function isAWord(string) {
+    return /^\w+$/.test(string);
+}
+
+function wordIsCapitalized(word) {
+    return word.charAt(0).toUpperCase() === word.charAt(0);
+}
+
+function capitalizeFranklinWord(franklinWord) {
+    var firstLetterOfFranklinWord = franklinWord.charAt(0);
+
+    if (firstLetterOfFranklinWord === 'ʃ')
+        return 'S' + franklinWord.slice(1);
+
+    if (firstLetterOfFranklinWord === 'α')
+        return 'A' + franklinWord.slice(1);
+
+    if (isANormalLetter(firstLetterOfFranklinWord))
+        return firstLetterOfFranklinWord.toUpperCase() + franklinWord.slice(1);
+
+    return franklinWord;
+}
+
+function isANormalLetter(letter) {
+    return /[a-z]/.test(letter);
+}
 
 function convertEnglishWordToFranklinWord(word) {
 

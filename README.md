@@ -6,6 +6,10 @@ I used the rules outlined in the ['Benjamin Franklin's phonetic alphabet' Wikipe
 
 Additionally I used the primary source: ['A Reformed Mode of Spelling.' within Franklin's 'Political, Miscellaneous, and Philosophical Pieces'](https://archive.org/stream/politicalmiscell00franrich#page/466/mode/2up).
 
+### Capitalization
+
+Based on Franklin's examples, it appears that only old (e.g. 'b', 'i', etc) letters are capitalized. The exceptions are that, 'ʃ' (the 's' of the day) is capitalized when necessary and becomes 'S', and 'α' (the 'a' of the day) is capitalized when necessary and becomes an 'A'.
+
 ## Characters
 
 Franklin's characters are shown [here](https://archive.org/stream/politicalmiscell00franrich#page/470/mode/2up). I primarily used the corresponding Unicode characters from the Wikipedia article mentioned above. But, I wanted each Franklin character to correspond with exactly one Unicode character. So, I used [this tool](https://qaz.wtf/u/convert.cgi) and [this document](http://www.unicode.org/Public/security/latest/confusables.txt) to find new characters whenever the Wikipedia article suggested using a combination of characters to create a Franklin character.
