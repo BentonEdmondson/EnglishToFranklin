@@ -1,4 +1,4 @@
-# EnglishToFranklin
+# English To Franklin's Phonetic Alphabet Converter
 
 ## Sources
 

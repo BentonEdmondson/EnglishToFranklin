@@ -1,7 +1,7 @@
 var arpabetToFranklin = require('./ARPABETToFranklin');
-var englishToArpabet = require('./EnglishToARPABET.json');
+var englishToArpabet = require('./EnglishToARPABET');
 
-var sentence = `This interesting language, though more consistent, still has quirks.`;
+var sentence = `The trees obfuscate the beautiful lake.`;
 
 var sentenceWordsAndPunctuation = sentence.match(/[\w']+|[^\w']+/g);
 
@@ -10,7 +10,7 @@ var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(word => {
         return word;
 
     try {
-        var franklinWord = convertEnglishWordToFranklinWord(word.toLowerCase());
+        var franklinWord = convertEnglishWordToFranklinWord(word.toUpperCase());
 
         if (wordIsCapitalized(word))
             return capitalizeFranklinWord(franklinWord);
@@ -18,7 +18,7 @@ var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(word => {
         return franklinWord;
     }
     catch (error) {
-        if (error.message === `'${word.toLowerCase()}' is not in the CMU dictionary.`)
+        if (error.message === `'${word.toUpperCase()}' is not in the CMU dictionary.`)
             return word;
         else
             throw error;
@@ -97,7 +97,6 @@ function convertEnglishWordToFranklinWord(word) {
     return franklinVersionOfWord;
 }
 
-// I don't know why I can't use arrow notation for these, but alas
 function isLastItemOfArray(index, arrayLength) {
     return index + 1 === arrayLength;
 }
