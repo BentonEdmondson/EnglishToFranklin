@@ -8,7 +8,7 @@ Additionally I used the primary source: ['A Reformed Mode of Spelling.' within F
 
 ### Capitalization
 
-Based on Franklin's examples, it appears that only old (e.g. 'b', 'i', etc) letters are capitalized. The exceptions are that, 'ʃ' (the 's' of the day) is capitalized when necessary and becomes 'S', and 'α' (the 'a' of the day) is capitalized when necessary and becomes an 'A'.
+Based on Franklin's examples, it appears that only old (e.g. 'b', 'i', etc) letters are capitalized. In addition, 'ʃ' (the 's' of the day) is capitalized when necessary and becomes 'S', 'α' (the 'a' of the day) is capitalized when necessary and becomes an 'A', and 'ƒ' (the 'f' of the day) is capitalized when necesssary and becomes an 'F'.
 
 ## Characters
 

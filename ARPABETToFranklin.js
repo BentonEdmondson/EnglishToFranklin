@@ -23,8 +23,8 @@ module.exports = {
     "IH": "i",
     // j - {y}acht
     "Y": "i",
-    // unstressed (hence the '0') i - happ{y} https://teflpedia.com/IPA_phoneme_/i%CB%90/
-    "IY0": "i",
+    // unstressed (thus below IY1 is defined) i - happ{y} https://teflpedia.com/IPA_phoneme_/i%CB%90/
+    "IY": "i",
 
     // ʊ - b{oo}k
     "UH": "u",
@@ -69,7 +69,7 @@ module.exports = {
     "DH": "ђ",
 
     // standard consonants
-    "F": "f",
+    "F": "ƒ",
     "V": "v",
     "B": "b",
     "P": "p",
@@ -100,7 +100,7 @@ module.exports = {
     "ER": "ɥr",
 
     // "ii or i" i - b{ea}t
-    "IY": "ii",
+    "IY1": "ii",
 
     // ɔɪ - b{oy}
     "OY": "ɋɥi",

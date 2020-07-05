@@ -1,9 +1,9 @@
 var arpabetToFranklin = require('./ARPABETToFranklin');
 var englishToArpabet = require('./EnglishToARPABET.json');
 
-var sentence = `The Obamanomics are fascinating.`;
+var sentence = `This interesting language, though more consistent, still has quirks.`;
 
-var sentenceWordsAndPunctuation = sentence.match(/\w+|[^\w]+/g);
+var sentenceWordsAndPunctuation = sentence.match(/[\w']+|[^\w']+/g);
 
 var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(word => {
     if (!isAWord(word))
@@ -29,7 +29,7 @@ console.log(`Original sentence: ${sentence}`)
 console.log(`Franklin sentence: ${franklinVersionOfSentence}`);
 
 function isAWord(string) {
-    return /^\w+$/.test(string);
+    return /^[\w'ʃαƒ]+$/.test(string);
 }
 
 function wordIsCapitalized(word) {
@@ -38,17 +38,24 @@ function wordIsCapitalized(word) {
 
 function capitalizeFranklinWord(franklinWord) {
     var firstLetterOfFranklinWord = franklinWord.charAt(0);
+    var newFirstLetterOfFranklinWord = firstLetterOfFranklinWord;
 
-    if (firstLetterOfFranklinWord === 'ʃ')
-        return 'S' + franklinWord.slice(1);
+    switch (firstLetterOfFranklinWord) {
+        case 'ʃ':
+            newFirstLetterOfFranklinWord = 'S';
+            break;
+        case 'α':
+            newFirstLetterOfFranklinWord = 'A';
+            break;
+        case 'ƒ':
+            newFirstLetterOfFranklinWord = 'F';
+            break;
+        default:
+            if (isANormalLetter(firstLetterOfFranklinWord))
+                newFirstLetterOfFranklinWord = firstLetterOfFranklinWord.toUpperCase();
+    }
 
-    if (firstLetterOfFranklinWord === 'α')
-        return 'A' + franklinWord.slice(1);
-
-    if (isANormalLetter(firstLetterOfFranklinWord))
-        return firstLetterOfFranklinWord.toUpperCase() + franklinWord.slice(1);
-
-    return franklinWord;
+    return newFirstLetterOfFranklinWord + franklinWord.slice(1);
 }
 
 function isANormalLetter(letter) {
