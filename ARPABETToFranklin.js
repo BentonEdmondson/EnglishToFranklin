@@ -1,10 +1,11 @@
 module.exports = {
+
     // sources for examples are here unless otherwise noted: https://en.wikipedia.org/wiki/ARPABET
 
     // oʊ - b{oa}t
     "OW": "o",
 
-    // candidates for this block's letter: Ɋ ѻ ꜵ 𝓸 cɩ ᶐ գ (it is the leftmost letter here: https://upload.wikimedia.org/wikipedia/commons/6/6b/Franklin%27s_extra_letters.jpg)
+    // candidates for this block's letter: Ɋ ѻ ꜵ 𝓸 cɩ ᶐ գ 𝔬 (it is the leftmost letter here: https://upload.wikimedia.org/wikipedia/commons/6/6b/Franklin%27s_extra_letters.jpg)
     // ɔː - cl{o}th https://teflpedia.com/Phoneme_/%C9%94%CB%90/_in_General_American#:~:text=Some%20common%20words%20containing%20%2F%C9%94%CB%90,soft%2C%20song%2C%20strong%2C%20wrong
     "AO": "ᶐ",
     // ɒ - st{o}p https://teflpedia.com/IPA_phoneme_/%C9%92/
@@ -63,8 +64,9 @@ module.exports = {
     // θ - {th}igh
     "TH": "ⱨ",
 
+    // candidates: ˇⱨ 𝔥 ђ
     // ð - {th}y
-    "DH": "ˇⱨ",
+    "DH": "ђ",
 
     // standard consonants
     "F": "f",
@@ -73,7 +75,7 @@ module.exports = {
     "P": "p",
     "M": "m",
 
-    // the above comes from en.wikipedia.org/wiki/Benjamin_Franklin%27s_phonetic_alphabet under 'Franklin's proposed phonetic alphabet'"
+    // the above comes from https://en.wikipedia.org/wiki/Benjamin_Franklin%27s_phonetic_alphabet under 'Franklin's proposed phonetic alphabet'"
     // the below come from the same page under 'Other English phonemes are represented as follows:'"
 
     // hw - {wh}y, unfortunately the CMU dictionary doesn't use WH at all, so this won't work.
@@ -83,7 +85,7 @@ module.exports = {
     "AY": "ɥi",
 
     // aʊ - m{ou}th https://teflpedia.com/IPA_phoneme_/a%CA%8A/
-    "AW": "cɩu",
+    "AW": "ᶐu",
 
     // dʒ - {j}et
     "JH": "dի",
@@ -101,10 +103,10 @@ module.exports = {
     "IY": "ii",
 
     // ɔɪ - b{oy}
-    "OY": "cɩɥi",
+    "OY": "ᶐɥi",
 
     // ɔːr - aff{or}d
-    //"AO R": "cɩr", this one works on its own
+    //"AO R": "ᶐr", this one works on its own
 
     // oʊr - {or}ion
     //"OW R": "or", this one also works on its own
@@ -114,7 +116,4 @@ module.exports = {
 
     // ʒ - mea{s}ure
     "ZH": "zի",
-
-    // this is used if I want to skip an ARPABET sound:
-    '': ''
 };
