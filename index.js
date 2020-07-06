@@ -1,7 +1,7 @@
 var arpabetToFranklin = require('./ARPABETToFranklin');
 var englishToArpabet = require('./EnglishToARPABET');
 
-var sentence = `The dog is black and white, but he is not a puppy...`;
+var sentence = `January`;
 
 var sentenceWordsAndPunctuation = sentence.match(/[\w']+|[^\w']+/g);
 
