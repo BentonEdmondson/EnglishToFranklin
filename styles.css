@@ -9,7 +9,7 @@ html {
 
 .box {
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .centered {
@@ -29,7 +29,7 @@ html {
     height: 4rem;
     resize: vertical;
     outline: none;
-    border-radius: 8px;
+    background-color: #c6bcb6;
 }
 
 .output {
@@ -44,6 +44,7 @@ button {
     color: #555555;
     border-radius: 8px;
     border-style: none;
+    padding: 5px;
 }
 
 button:hover {
