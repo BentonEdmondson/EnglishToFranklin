@@ -10,11 +10,14 @@ Additionally I used the primary source: ['A Reformed Mode of Spelling.' within F
 
 Sometimes, the output of this program is inconsistent with examples in the primary source. I have decided that I will stay loyal to the description on the Wikipedia page. This is because (a) I assume that pronunciations have evolved since Franklin's time, and that the Wikipedia authors took this into consideration. This would mean some that the spelling based on new pronunciations causes discrepancies with the old spellings based on old pronunciations. And (b) I don't want this project to devolve into a wild goose chase. 
 
-TODO: add in talk about 'eer' only being on stress (although maybe don't do this), '~ei' thing only being 'e' not 'ee', and how 's' works at the end of works
+#### Necessary Decisions
 
-### Capitalization
+* The Wikipedia article says that eɪ/EY (b**ai**t) can "sometimes" be shown with 'e'. It also says "/eɪ/, at the time more probably [eː~ɛː], is represented as ee or e". So I decided to represent eɪ/EY with 'ee' to make 'bet' and 'bait' distinguishable ('bet' and 'beet' respectively).
+* The Wikipedia article says that a /z/ at the end of a word is sometimes represented with an 's'. I basically had to ignore this because detecting whether the word should end with 'z' or 's' is out of the scope of this project.
 
-The author of 'A Reformed Mode of Spelling.' says, regarding capital letters, "I should have provided for them by means of larger types, but the form of some of them would have made them too large for the page". So, only old (e.g. 'b', 'i', etc) letters are capitalized in that work, and I have not found the capitilized versions of the new letters. As such, only old letters are capitalized. In addition, 'ʃ' (the 's' of the day) is capitalized when necessary and becomes 'S', and 'ɑ' (the 'a' of the day) is capitalized when necessary and becomes an 'A'.
+#### Capitalization
+
+The author of 'A Reformed Mode of Spelling.' says, regarding capital letters, "I should have provided for them by means of larger types, but the form of some of them would have made them too large for the page". So, only old (e.g. 'b', 'i', etc) letters are capitalized in that work, and I have not found the capitalized versions of the new letters. As such, only old letters are capitalized. In addition, 'ʃ' (the 's' of the day) is capitalized when necessary and becomes 'S', and 'ɑ' (the 'a' of the day) is capitalized when necessary and becomes an 'A'.
 
 ## Characters
 
