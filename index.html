@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <script src="EnglishToARPABET.js"></script>
+    <script src="ARPABETToFranklin.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="centered box">
+        <textarea class="input" autocomplete="off" autofocus="true"></textarea>
+
+        <button data-clipboard-target=".output">kɋpi tekʃt</button>
+
+        <div class="output box"> </div>
+        <!-- I initialize this field with the above, but clear it immediately after the document is ready. If I don't do this the weird Unicode characters get messed up. -->
+    </div>
+</body>
+
+</html>

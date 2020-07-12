@@ -1,32 +1,40 @@
-var arpabetToFranklin = require('./ARPABETToFranklin');
-var englishToArpabet = require('./EnglishToARPABET');
+var debug = false;
 
-var sentence = `January`;
+$(document).ready(() => {
+    new ClipboardJS('button');
 
-var sentenceWordsAndPunctuation = sentence.match(/[\w']+|[^\w']+/g);
+    $('.input').on('input', () => {
 
-var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(word => {
-    if (!isAWord(word))
-        return word;
+        var sentence = $(".input").val() || ' ';
 
-    try {
-        var franklinWord = convertEnglishWordToFranklinWord(word.toUpperCase());
+        var sentenceWordsAndPunctuation = sentence.match(/[\w']+|[^\w']+/g);
 
-        if (wordIsCapitalized(word))
-            return capitalizeFranklinWord(franklinWord);
+        var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(word => {
+            if (!isAWord(word))
+                return word;
 
-        return franklinWord;
-    }
-    catch (error) {
-        if (error.message === `'${word.toUpperCase()}' is not in the CMU dictionary.`)
-            return word;
-        else
-            throw error;
-    }
-}).join('');
+            try {
+                var franklinWord = convertEnglishWordToFranklinWord(word.toUpperCase());
 
-console.log(`Original sentence: ${sentence}`)
-console.log(`Franklin sentence: ${franklinVersionOfSentence}`);
+                if (wordIsCapitalized(word))
+                    return capitalizeFranklinWord(franklinWord);
+
+                return franklinWord;
+            }
+            catch (error) {
+                if (error.message === `'${word.toUpperCase()}' is not in the CMU dictionary.`)
+                    return word;
+                else
+                    throw error;
+            }
+        }).join('');
+
+        log(`Original sentence: ${sentence}`)
+        log(`Franklin sentence: ${franklinVersionOfSentence}`);
+
+        $('.output').text(franklinVersionOfSentence);
+    });
+});
 
 function isAWord(string) {
     return /^[\w']+$/.test(string);
@@ -47,9 +55,6 @@ function capitalizeFranklinWord(franklinWord) {
         case 'ɑ':
             newFirstLetterOfFranklinWord = 'A';
             break;
-        case 'ƒ':
-            newFirstLetterOfFranklinWord = 'F';
-            break;
         default:
             if (isANormalLetter(firstLetterOfFranklinWord))
                 newFirstLetterOfFranklinWord = firstLetterOfFranklinWord.toUpperCase();
@@ -68,8 +73,8 @@ function convertEnglishWordToFranklinWord(word) {
     if (!arpabetVersionOfWord)
         throw new Error(`'${word}' is not in the CMU dictionary.`);
 
-    console.log(`Parsing: ${word}`);
-    console.log(`Arpabet\t\tFranklin`);
+    log(`Parsing: ${word}`);
+    log(`Arpabet\t\tFranklin`);
 
     var franklinVersionOfWord = arpabetVersionOfWord.map((arpabetSound, i) => {
         var franklinLetter;
@@ -89,11 +94,11 @@ function convertEnglishWordToFranklinWord(word) {
         if (!franklinLetter)
             throw new Error(`Couldn't find a Franklin letter for ${arpabetSound}`);
 
-        console.log(`${arpabetSound}\t\t${franklinLetter}`);
+        log(`${arpabetSound}\t\t${franklinLetter}`);
         return franklinLetter
     }).join('');
 
-    console.log(`result: ${franklinVersionOfWord}\n`);
+    log(`Result: ${franklinVersionOfWord}\n`);
     return franklinVersionOfWord;
 }
 
@@ -103,4 +108,9 @@ function isLastItemOfArray(index, arrayLength) {
 
 function removeStressFromArpabetSound(string) {
     return string.slice(0, -1);
+}
+
+function log(text) {
+    if (debug)
+        console.log(text);
 }

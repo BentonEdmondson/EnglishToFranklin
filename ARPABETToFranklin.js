@@ -1,4 +1,4 @@
-module.exports = {
+var arpabetToFranklin = {
 
     // sources for examples are here unless otherwise noted: https://en.wikipedia.org/wiki/ARPABET
 
@@ -69,7 +69,7 @@ module.exports = {
     "DH": "ђ",
 
     // standard consonants
-    "F": "ƒ",
+    "F": "f",
     "V": "v",
     "B": "b",
     "P": "p",
