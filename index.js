@@ -24,7 +24,7 @@ $(document).ready(() => {
             catch (error) {
                 if (error.message === `'${word.toUpperCase()}' is not in the CMU dictionary.`) {
                     console.error(error.message);
-                    return word;
+                    return `<span class="red">${word}</span>`;
                 } else
                     throw error;
             }
@@ -33,7 +33,7 @@ $(document).ready(() => {
         log(`Original sentence: ${sentence}`)
         log(`Franklin sentence: ${franklinVersionOfSentence}`);
 
-        $('.output-text').text(franklinVersionOfSentence);
+        $('.output-text').html(franklinVersionOfSentence);
     });
 });
 

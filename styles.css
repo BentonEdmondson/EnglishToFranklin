@@ -60,3 +60,7 @@ button:hover {
     white-space: pre-wrap;
     width: 100%;
 }
+
+.red {
+    color: red;
+}
