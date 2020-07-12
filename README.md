@@ -14,7 +14,7 @@ TODO: add in talk about 'eer' only being on stress (although maybe don't do this
 
 ### Capitalization
 
-The author of 'A Reformed Mode of Spelling.' says, regarding capital letters, "I should have provided for them by means of larger types, but the form of some of them would have made them too large for the page". So, only old (e.g. 'b', 'i', etc) letters are capitalized in that work, and I have not found the capitilized versions of the new letters. As such, only old letters are capitalized. In addition, 'ʃ' (the 's' of the day) is capitalized when necessary and becomes 'S', 'ɑ' (the 'a' of the day) is capitalized when necessary and becomes an 'A', and 'ƒ' (the 'f' of the day) is capitalized when necesssary and becomes an 'F'.
+The author of 'A Reformed Mode of Spelling.' says, regarding capital letters, "I should have provided for them by means of larger types, but the form of some of them would have made them too large for the page". So, only old (e.g. 'b', 'i', etc) letters are capitalized in that work, and I have not found the capitilized versions of the new letters. As such, only old letters are capitalized. In addition, 'ʃ' (the 's' of the day) is capitalized when necessary and becomes 'S', and 'ɑ' (the 'a' of the day) is capitalized when necessary and becomes an 'A'.
 
 ## Characters
 
