@@ -15,10 +15,11 @@
     <div class="centered box">
         <textarea class="input box" autocomplete="off" autofocus="true"></textarea>
 
-        <button data-clipboard-target=".output">kɋpi tekʃt</button>
+        <div class="output box">
+            <button data-clipboard-target=".output-text">kɋpi tekʃt</button>
+            <div class="output-text"> </div>
+        </div>
 
-        <div class="output box"> </div>
-        <!-- I initialize this field with the above, but clear it immediately after the document is ready. If I don't do this the weird Unicode characters get messed up. -->
     </div>
 </body>
 

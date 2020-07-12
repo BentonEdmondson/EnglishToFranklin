@@ -22,9 +22,10 @@ $(document).ready(() => {
                 return franklinWord;
             }
             catch (error) {
-                if (error.message === `'${word.toUpperCase()}' is not in the CMU dictionary.`)
+                if (error.message === `'${word.toUpperCase()}' is not in the CMU dictionary.`) {
+                    console.error(error.message);
                     return word;
-                else
+                } else
                     throw error;
             }
         }).join('');
@@ -32,7 +33,7 @@ $(document).ready(() => {
         log(`Original sentence: ${sentence}`)
         log(`Franklin sentence: ${franklinVersionOfSentence}`);
 
-        $('.output').text(franklinVersionOfSentence);
+        $('.output-text').text(franklinVersionOfSentence);
     });
 });
 
