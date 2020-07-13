@@ -29,6 +29,7 @@ html {
     height: 3rem;
     resize: vertical;
     outline: none;
+    border: none;
     background-color: #c6bcb6;
 }
 

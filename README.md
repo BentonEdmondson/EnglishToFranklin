@@ -28,3 +28,5 @@ Franklin's characters are shown [here](https://archive.org/stream/politicalmisce
 First, the English words are sent through [Carnegie Mellon University's CMUdict](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) to convert them to [ARPABET words](https://en.wikipedia.org/wiki/ARPABET). If the input word is not in CMUdict, it is simply passed through and outputted in red.
 
 Then, I manually created `ARPABETToFranklin.js`, which converts ARPABET sounds to Franklin characters. I did this using the content on the ['Benjamin Franklin's phonetic alphabet' Wikipedia article](https://en.wikipedia.org/wiki/Benjamin_Franklin%27s_phonetic_alphabet).
+
+The conversion process can be escaped by surrounding text with ampersands. For example, `&hello&` will be outputted as `hello`, not `hɥlo`.

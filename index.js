@@ -1,4 +1,4 @@
-var debug = false;
+var debugging = false;
 
 $(document).ready(() => {
     new ClipboardJS('button');
@@ -7,11 +7,14 @@ $(document).ready(() => {
 
         var sentence = $(".input").val() || ' ';
 
-        var sentenceWordsAndPunctuation = sentence.match(/[\w']+|[^\w']+/g);
+        var sentenceWordsAndPunctuation = sentence.match(/&[\w']+&|[\w']+|[^\w'&]+|&+/g);
 
         var franklinVersionOfSentence = sentenceWordsAndPunctuation.map(word => {
+            if (shouldNotBeConverted(word))
+                return word.slice(1, -1);
+
             if (!isAWord(word))
-                return word;
+                return escapeHtml(word);
 
             try {
                 var franklinWord = convertEnglishWordToFranklinWord(word.toUpperCase());
@@ -23,7 +26,7 @@ $(document).ready(() => {
             }
             catch (error) {
                 if (error.message === `'${word.toUpperCase()}' is not in the CMU dictionary.`) {
-                    console.error(error.message);
+                    log(error.message);
                     return `<span class="red">${word}</span>`;
                 } else
                     throw error;
@@ -39,6 +42,14 @@ $(document).ready(() => {
 
 function isAWord(string) {
     return /^[\w']+$/.test(string);
+}
+
+function shouldNotBeConverted(string) {
+    return /^&[\w']+&$/.test(string);
+}
+
+function escapeHtml(string) {
+    return string.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
 function wordIsCapitalized(word) {
@@ -112,6 +123,6 @@ function removeStressFromArpabetSound(string) {
 }
 
 function log(text) {
-    if (debug)
+    if (debugging)
         console.log(text);
 }
