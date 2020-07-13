@@ -29,4 +29,4 @@ First, the English words are sent through [Carnegie Mellon University's CMUdict]
 
 Then, I manually created `ARPABETToFranklin.js`, which converts ARPABET sounds to Franklin characters. I did this using the content on the ['Benjamin Franklin's phonetic alphabet' Wikipedia article](https://en.wikipedia.org/wiki/Benjamin_Franklin%27s_phonetic_alphabet).
 
-The conversion process can be escaped by surrounding text with ampersands. For example, `&hello&` will be outputted as `hello`, not `hɥlo`.
+The conversion process can be escaped by surrounding words with ampersands. For example, `&hello&` will be outputted as `hello`, not `hɥlo`.
